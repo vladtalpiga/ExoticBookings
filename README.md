@@ -1,4 +1,4 @@
-# ProiectJavaPAO
+# Exotic Bookings - Booking company in java
 
 Proiectul meu consta intr-o platforma de inchiriere de masini si proprietati (case).
 La rularea aplicatiei va aparea un prim meniu unde putem alege daca inchiriem o masina sau o casa sau iesim din aplicatie.
