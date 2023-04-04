@@ -19,7 +19,14 @@ public abstract class Booking {
         Scanner r = new Scanner(System.in);
 
         System.out.print("Booking/rental duration (in days): ");
-        this.duration = Integer.parseInt(r.nextLine());
+        int dur = Integer.parseInt(r.nextLine());
+
+        while (dur < 1) {
+            System.out.print("Reenter booking/rental duration: ");
+            r = new Scanner(System.in);
+            dur = Integer.parseInt(r.nextLine());
+        }
+        this.duration = dur;
     }
     public Client getClient() {
         return client;

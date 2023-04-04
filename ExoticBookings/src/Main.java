@@ -1,3 +1,5 @@
+import Booking.CarBooking;
+import Booking.HouseBooking;
 import People.Client;
 import Properties.Car;
 import Service.RentCar;
@@ -36,6 +38,9 @@ public class Main {
         Car car8 = new Car(100, "BMW", 2009);
         Car car9 = new Car(300, "Audi", 2016);
         Car car10 = new Car(250, "Tesla", 2019);
+        Car car11 = new Car(1500, "AMG", 2023);
+        Car car12 = new Car(1200, "Koenigsegg", 2011);
+        Car car13 = new Car(700, "Lexus", 2016);
         List <Car> cars = new ArrayList<>();
         cars.add(car1);
         cars.add(car2);
@@ -46,8 +51,21 @@ public class Main {
         cars.add(car7);
         cars.add(car8);
         cars.add(car9);
-        cars.add(car10);
         rentCar.setCars(cars);
+
+        List<CarBooking> carBookings = new ArrayList<>();
+
+        CarBooking cb1 = new CarBooking(c1, 5, car10);
+        CarBooking cb2 = new CarBooking(c1, 7, car11);
+        CarBooking cb3 = new CarBooking(c2, 10, car12);
+        CarBooking cb4 = new CarBooking(c3, 3, car13);
+        carBookings.add(cb1);
+        carBookings.add(cb2);
+        carBookings.add(cb3);
+        carBookings.add(cb4);
+
+        rentCar.setCarBookings(carBookings);
+
 
         RentHouse rentHouse = new RentHouse();
 
@@ -63,31 +81,44 @@ public class Main {
         List <House> houses = new ArrayList<>();
         House h1 = new House(700, o1,200, 5, "Barcelona");
         House h2 = new House(150, o1,30, 1, "Barcelona");
-        House h3 = new House(700, o2,200, 5, "Barcelona");
-        House h4 = new House(700, o3,200, 5, "Barcelona");
-        House h5 = new House(300, o1, 90, 2, "London");
-        House h6 = new House(300, o1, 90, 2, "London");
-        House h7 = new House(300, o3, 90, 2, "London");
-        House h8 = new House(300, o1, 90, 2, "Rome");
-        House h9 = new House(300, o2, 90, 2, "Rome");
-        House h10 = new House(300, o2, 90, 2, "Rome");
-        House h11 = new House(300, o1, 90, 2, "Paris");
-        House h12 = new House(300, o2, 90, 2, "Paris");
-        House h13 = new House(300, o3, 90, 2, "Paris");
-        houses.add(h1);
+        House h3 = new House(900, o2,200, 7, "Barcelona");
+        House h4 = new House(1500, o3,100, 10, "Barcelona");
+        House h5 = new House(100, o1, 10, 1, "London");
+        House h6 = new House(700, o1, 90, 6, "London");
+        House h7 = new House(500, o3, 50, 3, "London");
+        House h8 = new House(900, o1, 150, 7, "Rome");
+        House h9 = new House(400, o2, 30, 2, "Rome");
+        House h10 = new House(300, o2, 40, 2, "Rome");
+        House h11 = new House(100, o1, 20, 1, "Paris");
+        House h12 = new House(600, o2, 80, 6, "Paris");
+        House h13 = new House(900, o3, 150, 10, "Paris");
+//        houses.add(h1);
         houses.add(h2);
         houses.add(h3);
         houses.add(h4);
-        houses.add(h5);
+//        houses.add(h5);
         houses.add(h6);
         houses.add(h7);
-        houses.add(h8);
+//        houses.add(h8);
         houses.add(h9);
         houses.add(h10);
         houses.add(h11);
         houses.add(h12);
-        houses.add(h13);
+//        houses.add(h13);
         rentHouse.setHouses(houses);
+
+        List <HouseBooking> houseBookings = new ArrayList<>();
+
+        HouseBooking hb1 = new HouseBooking(c1, 5, h13);
+        HouseBooking hb2 = new HouseBooking(c1, 3, h1);
+        HouseBooking hb3 = new HouseBooking(c4, 8, h8);
+        HouseBooking hb4 = new HouseBooking(c5, 7, h5);
+        houseBookings.add(hb1);
+        houseBookings.add(hb2);
+        houseBookings.add(hb3);
+        houseBookings.add(hb4);
+
+        rentHouse.setHouseBookings(houseBookings);
 
 
         while (true) {
